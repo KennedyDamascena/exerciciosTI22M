@@ -25,13 +25,27 @@ namespace Exercicios
         public void MostrarMenu()
         {
             Console.WriteLine("\nMenu" +
-                "\n0. Sair"+
-                "\n1. Exercicio 1" +
-                "\n2. Exercicio 2" +
-                "\n5. Exercicio 5" +
-                "\n8. Exercicio 8" +
-                "\n9. Exercicio 9" +
-                "\n16. Exercicio 16");
+                "\n0.  Sair"+
+                "\n1.  Exercicio 1" +
+                "\n2.  Exercicio 2" +
+                "\n3.  Exercicio 3" +
+                "\n4.  Exercico  4" +
+                "\n5.  Exercicio 5" +
+                "\n6.  Exercicio 6" +
+                "\n7.  Exercicio 7" +
+                "\n8.  Exercicio 8" +
+                "\n9.  Exercicio 9" +
+                "\n10. Exercicio 10"+
+                "\n11. Exercicio 11"+
+                "\n12. Exercicio 12"+
+                "\n13. Exercicio 13"+
+                "\n14. Exercicio 14"+
+                "\n15. Exercicio 15"+
+                "\n16. Exercicio 16"+
+                "\n17. Exercicio 17"+
+                "\n18. Exercicio 18"+
+                "\n19. Exercicio 19"+
+                "\n20. Exercicio 20");
             ModificarOpcao=Convert.ToInt32(Console.ReadLine());
         }//Fim do Metodo MostraMenu
         public void ExecutarMenu()
@@ -58,11 +72,67 @@ namespace Exercicios
                         num = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine(modelo.Metade(num));
                         break;
+                    case 3:
+                        Console.WriteLine("Exercicio 03");
+                        Console.WriteLine("Informe o valor do Dolar");
+                        double dolar = Convert.ToDouble(Console.ReadLine());
+
+                        Console.WriteLine("Informe a Taxa Fixa");
+                        double taxaFixa= Convert.ToDouble(Console.ReadLine());
+
+                        //Mostrar Resultado
+                        if (modelo.ValorReal(dolar, taxaFixa)==-1)
+                        {
+                            Console.WriteLine("Os Números digitados não são válidos!!");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"O Valor em Real é:{modelo.ValorReal(dolar, taxaFixa)}");
+                        }
+                        break;
+                    case 4:
+                        Console.WriteLine("Exerciocio 04");
+                        Console.WriteLine("Informe o comprimento de um dos lados do quadrado");
+                        double lado =Convert.ToDouble(Console.ReadLine());
+
+                        //Mostrar Resultado
+                        if (modelo.ValorPerimetro(lado) == -1)
+                        {
+                            Console.WriteLine("Os Números digitados não são válidos!!");
+                        }
+                        else
+
+                            Console.WriteLine($"O valor do perimetro é:{modelo.ValorPerimetro(lado)}");
+                        break;
+
                     case 5:
                         Console.WriteLine("Exercicio 05");
                         Console.WriteLine("Informe a Hora");
                         double hora = Convert.ToInt32(Console.ReadLine());
-                        Console.WriteLine(modelo.ValorMinutos(hora));
+                        Console.WriteLine($"O Resultado é: {modelo.ValorMinutos(hora)} Minutos");
+                        break;
+                    case 6:
+                        Console.WriteLine("Exercicio 06");
+                        Console.WriteLine("Informe o Valor");
+                        double num1 = Convert.ToDouble(Console.ReadLine());
+                        if (modelo.DezPorcento(num1) == -1)
+                        {
+                            Console.WriteLine("Os Números digitados não são válidos!!");
+                        }
+                        else
+                            Console.WriteLine($"O Resultado é: {modelo.DezPorcento(num1)} de dez porcento");
+                        break;
+
+                    case 7:
+                        Console.WriteLine("Exercicio 07");
+                        Console.WriteLine("Informe o Valor");
+                        num1 = Convert.ToInt32(Console.ReadLine());
+                        if (modelo.VintePorcento(num1) == -1)
+                        {
+                            Console.WriteLine("Os Números digitados não são válidos!!");
+                        }
+                        else
+                            Console.WriteLine($"O Resultado do valor é: {modelo.VintePorcento(num1)} de vinte porcento");
                         break;
 
                     case 8:
@@ -79,7 +149,7 @@ namespace Exercicios
                         }
                         else
                         {
-                            Console.WriteLine($"A área do Losango é:{modelo.AreaLosango(diagonalMaior, diagonalMenor)}");
+                            Console.WriteLine($"A área do Losango é: {modelo.AreaLosango(diagonalMaior, diagonalMenor)}");
                         }
                         break;
                     case 9:
@@ -100,6 +170,60 @@ namespace Exercicios
                             Console.WriteLine($"O volume do cilindro é:{modelo.VolumeCilindro(raio, altura)} ");
                         }
                         break;
+                   
+                    case 10:
+                        Console.WriteLine("Exercicio 10");
+                        Console.WriteLine("Informe o número");
+                        num = Convert.ToInt32(Console.ReadLine());                       
+                       
+                        Console.WriteLine($"O valor absoluto é {modelo.ValorAbsoluto(num)}");
+                        break;
+                    
+                    case 11:
+                        Console.WriteLine("Exercicio 11");
+                        Console.WriteLine("Informe quantos quilometros são");
+                        double km = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine($"O Valor de Quilometros é: {modelo.Metro(km)} Metros");
+                        break; 
+                    
+                    case 12:
+                        Console.WriteLine("Exercicio 12");
+                        Console.WriteLine("Informe o Número");
+                        num = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine($"A quinta Potencia deste numero é: {modelo.QuintaPotencia(num)}");
+                        break; 
+
+                    case 13:
+                        Console.WriteLine("Exercicio 13");
+                        Console.WriteLine("Informe a Distancia");
+                        double distancia = Convert.ToDouble(Console.ReadLine());
+
+                        Console.WriteLine("Informe a Velocidade");
+                        double velocidade = Convert.ToDouble(Console.ReadLine());
+
+                        Console.WriteLine($"O tempo de Viagem é: {modelo.TempoViagem(distancia, velocidade)}");
+                        break;
+                    
+                    case 14:
+                        Console.WriteLine("Exercicio 14");
+                        Console.WriteLine("Informe quantos Quilometros");
+                        km = Convert.ToDouble(Console.ReadLine());
+
+                        Console.WriteLine("Informe quantos litros");
+                        double litros = Convert.ToDouble(Console.ReadLine());
+
+                        Console.WriteLine($"O Consomo médio de Combustivel é: {modelo.ConsumoMedio(km,litros)} Quilometros por Litro");
+                        break;
+                    case 15:
+                        Console.WriteLine("Exercicio 15");
+                        Console.WriteLine("Digite 5 para calcular o Fatorial");
+                        num = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine($"O fatorial de 5 é: {modelo.Fatorial(num)}");
+                        break;
+
+
 
                     case 16:
                         Console.WriteLine("Exercicio 16");
@@ -116,6 +240,39 @@ namespace Exercicios
                     default:
                         Console.WriteLine("Opção escolhida não é valida!!");
                         break;
+
+                    case 17:
+                        Console.WriteLine("Exercicio 17");
+                        Console.WriteLine("Informe o salario Mensal");
+                        double mensal = Convert.ToDouble(Console.ReadLine());
+
+                        Console.WriteLine($" O salário anual é: {modelo.ValorAnual(mensal)} ao ano");
+                        break;
+                    
+                    case 18:
+                        Console.WriteLine("Exercicio 18");
+                        Console.WriteLine("Digite o número");
+                        
+                        num1 = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine($"O logaritmo natural desse Número é: {modelo.Logaritmo(num1)}");
+                        break;
+
+                    case 19:
+                        Console.WriteLine("Exercicio 19");
+                        Console.WriteLine("Digite o número");
+
+                        num1 = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine($"O Seno desse Número é: {modelo.Seno(num1)}");
+                        break; 
+
+                    case 20:
+                        Console.WriteLine("Exercicio 20");
+                        Console.WriteLine("Digite o número");
+
+                        num1 = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine($"O Cosseno desse Número é: {modelo.Cosseno(num1)}");
+                        break;
+                   
                 }//Fim da Escolha
             }while(ModificarOpcao!=0);
         }//Fim do Método

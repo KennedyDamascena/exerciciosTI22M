@@ -13,7 +13,7 @@ namespace Exercicios
         private double IMC;
         //metodo construtor
 
-        public ExerciciosModel() 
+        public ExerciciosModel()
         {
             this.area = 0;
             this.IMC = 0;
@@ -28,10 +28,10 @@ namespace Exercicios
 
         public double ModificarIMC
         {
-            get { return this.IMC; } 
-            set {this.IMC = value; } 
+            get { return this.IMC; }
+            set { this.IMC = value; }
         }
-        
+
 
         //1.Leia um numero e exiba seu triplo
         public int Triplo(int num)
@@ -40,18 +40,64 @@ namespace Exercicios
         }//fim do metodo
 
         //2.Leia um numero e exiba sua metadade
-        public int Metade(int num) 
+        public int Metade(int num)
         {
             return num / 2;
         }//Fim do Método
 
+        //3. Converta um valor de dólares para reais com uma taxa fixa.
+        public double ValorReal(double dolar, double taxaFixa)
+        {
+            if (dolar > 0 && taxaFixa > 0)
+            {
+                return dolar * taxaFixa;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+
+        //4. Calcule o perímetro de um quadrado com base no lado.
+
+        public double ValorPerimetro(double lado)
+        {
+            if (lado <= 0)
+            {
+                return -1;
+            }
+            else
+            {
+                return lado * 4;
+            }
+        }
+
+        //5. Converta um valor em horas para minutos
+        public double ValorMinutos(double hora)
+        {
+            return hora * 60;
+        }//fim
+
+        //6. Leia um número e exiba 10% dele
+        public double DezPorcento(double num)
+        {
+            return num * 0.1;
+        }//Fim
+
+        //7. Leia um número e exiba 25% dele.
+        public double VintePorcento(double num)
+        {
+            return num * 0.25;
+        }//Fim
+
+
         //8.Calcule a area de um losango com base nas diagonais
         //area =diagonalmaior * diagonalmenor /2
 
-        public double AreaLosango(double diagonaMaior,double diagonalMenor)
+        public double AreaLosango(double diagonaMaior, double diagonalMenor)
         {
             // Validação
-            if (diagonalMenor > 0 && diagonalMenor>0)
+            if (diagonalMenor > 0 && diagonalMenor > 0)
             {
                 ModificarArea = (diagonaMaior * diagonalMenor) / 2;
             }
@@ -66,15 +112,95 @@ namespace Exercicios
         //volume =math.pi * math.pow(raio,2)* altura
         public double VolumeCilindro(double raio, double altura)
         {
-           if(raio> 0 && altura>0)
+            if (raio > 0 && altura > 0)
             {
-                return Math.PI* Math.Pow(raio,2)* altura;
+                return Math.PI * Math.Pow(raio, 2) * altura;
             }
-            else 
+            else
             {
                 return -1;
             }
         }//Fim do Método
+
+        //10. Leia um número e exiba seu valor absoluto.
+        public int ValorAbsoluto(int num)
+        {
+            if (num < 0)
+            {
+                return num * -1;
+            }
+            else
+            {
+                return num;
+            }
+        }//Fim
+
+        //11. Converta um valor de quilômetros para metros.
+        public double Metro(double Km)
+        {
+            return Km * 1000;
+        }//Fim
+
+        //12. Leia um número e exiba sua quinta potência.
+        public double QuintaPotencia(int num)
+        {
+            return Math.Pow(num, 5);
+        }//Fim
+
+        //13.Calcule o tempo de uma viagem com base na distância e velocidade.
+        public double TempoViagem(double distancia, double velocidade)
+        {
+            return distancia / velocidade;
+        }//Fim
+
+        //14.Calcule o consumo médio de combustível com base em km e litros.
+        public double ConsumoMedio(double km,double litros)
+        { 
+            return km / litros;
+        }//Fim
+
+        //15. Leia um número e calcule seu fatorial (sem estruturas de repetição).
+        public double Fatorial(double num)
+        {
+            double resultado = num;
+            num = num - 1;
+            resultado = resultado * num;
+            num = num - 1;
+            resultado = resultado * num;
+            num = num - 1;
+            resultado = resultado * num;
+            num = num - 1;
+            resultado = resultado * num;
+            return resultado;
+        }
+        
+        //17. Calcule o salário anual com base no valor mensal.
+        public double ValorAnual(double mensal)
+        { 
+            return mensal * 12;
+        }
+
+        //18. Leia um número e exiba seu logaritmo natural.
+        public double Logaritmo(double num) 
+        {
+            return Math.Log(num);
+        }
+
+        //19. Leia um número e exiba seu seno.
+        public double Seno(double num)
+        { 
+            return Math.Sin(num);
+        }
+
+        //20. Leia um número e exiba seu cosseno.
+        public double Cosseno(double num) 
+        {
+            return Math.Cos(num);
+        }
+
+
+
+
 
         //16.Leia a altura e peso de uma pessoa e calcule o IMC
         //se IMC < 18.5 Abaixo do peso
@@ -125,12 +251,8 @@ namespace Exercicios
             return resultado;
         } //Fim do IMC
 
-        //5. Converta um valor em horas para minutos
-        public double ValorMinutos(double hora)
-        {
-            return hora * 60;
-        }//fim
-
+       
+        
 
 
 
