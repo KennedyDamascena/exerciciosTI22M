@@ -45,7 +45,17 @@ namespace Exercicios
                 "\n17. Exercicio 17"+
                 "\n18. Exercicio 18"+
                 "\n19. Exercicio 19"+
-                "\n20. Exercicio 20");
+                "\n20. Exercicio 20"+
+                "\n21. Exercicio 21"+
+                "\n22. Exercicio 22"+
+                "\n23. Exercicio 23"+
+                "\n24. Exercicio 24"+
+                "\n25. Exercicio 25"+
+                "\n26. Exercicio 26"+
+                "\n27. Exercicio 27"+
+                "\n28. Exercicio 28"+
+                "\n29. Exercicio 29"+
+                "\n30. Exercicio 30");
             ModificarOpcao=Convert.ToInt32(Console.ReadLine());
         }//Fim do Metodo MostraMenu
         public void ExecutarMenu()
@@ -272,7 +282,77 @@ namespace Exercicios
                         num1 = Convert.ToDouble(Console.ReadLine());
                         Console.WriteLine($"O Cosseno desse Número é: {modelo.Cosseno(num1)}");
                         break;
-                   
+
+                    case 21:
+                        Console.WriteLine("Exercicio 21");
+                        Console.WriteLine("Digite a base Maior");
+                        double baseMaior = Convert.ToDouble(Console.ReadLine());
+
+                        Console.WriteLine("Digite a base Menor");
+                        double baseMenor= Convert.ToDouble(Console.ReadLine());
+                        
+                        Console.WriteLine("Digite a Altura");
+                        altura = Convert.ToDouble(Console.ReadLine());
+
+                        Console.WriteLine($"A área desse trapézio é de: {modelo.AreaTrapezio(baseMaior,baseMenor,altura)} cm²");
+                        break;
+
+                    case 22:
+                        Console.WriteLine("Exercicio 22");
+                        Console.WriteLine("Digite a Quantidade de dias");
+                        double dias= Convert.ToDouble(Console.ReadLine());
+
+                        Console.WriteLine($"A Quantidade de dia em Segundos é: {modelo.DiasParaSegundos(dias)} segundos");
+                        break ; 
+                    
+                    case 23:
+                        Console.WriteLine("Exercicio 23");
+                        Console.WriteLine("Digite um número inteiro");
+                        num = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine($"Soma dos dígitos: {modelo.SomaDigitos(num)}");
+                        break; 
+
+                    case 24:
+                        Console.WriteLine("Exercicio 24");
+                        Console.WriteLine("Digite um número");
+                        num = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine($"O inverso multiplicativo de {num} é: {modelo.InversoMult(num)} ");
+                        break;
+
+                    case 25:
+                        Console.WriteLine("Exercicio 25");
+                        Console.WriteLine("Digite o cateto 1: ");
+                        double cateto1 = Convert.ToDouble(Console.ReadLine());
+                        
+                        Console.WriteLine("Digite o cateto 2: ");
+                        double cateto2 = Convert.ToDouble(Console.ReadLine());
+                        
+                        Console.WriteLine($"A hipotenusa é: {modelo.Hipotenusa(cateto1, cateto2)}cm");
+                        break;
+
+                    case 26:
+                        Console.WriteLine("Exercicio 26");
+                        Console.WriteLine("Digite o numero");
+                        int decim = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine($"O Numero em Binario é: {modelo.Binario(decim)}");
+                        break;
+
+                    case 27:
+                        Console.WriteLine("Exercicio 27");
+                        Console.WriteLine("Digite o Número");
+                        decim= Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine($"O Numero em hexadecimal é: {modelo.Hexadecimal(decim)}");
+                        break;
+
+                    case 28:
+                        Console.WriteLine("Exercicio 28");
+                        Console.WriteLine("Digite o Número");
+                        double valor = Convert.ToDouble(Console.ReadLine());
+
+                        Console.WriteLine($"A Raiz Cubica é: {modelo.RaizCubica(valor)}");
+                        break;
+
                 }//Fim da Escolha
             }while(ModificarOpcao!=0);
         }//Fim do Método

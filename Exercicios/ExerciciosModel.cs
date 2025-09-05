@@ -173,7 +173,56 @@ namespace Exercicios
             resultado = resultado * num;
             return resultado;
         }
-        
+
+        //16.Leia a altura e peso de uma pessoa e calcule o IMC
+        //se IMC < 18.5 Abaixo do peso
+        //Se IMC >=18.5 e IMC < 24.9 - Peso Normal
+        //Se Imc >= 24.9 e IMC< 29.9 - sobrepeso
+        //Se IMC >=29.9 e IMC < 34.4 - Obesidade Grau 1
+        //Se IMC >=34.4 e IMC < 39.9 - Obesidade Grau 2 
+        //Se IMC >= 39.9               Obesidade Grau 3
+        //devolva o grau
+        public string CalcularIMC(double peso, double altura)
+        {
+            string resultado = "";
+            if (peso > 0 && altura >= 0)
+            {
+                //Calculei
+                ModificarIMC = peso / Math.Pow(altura, 2);
+                //Verificando resposta
+                resultado = "\nSeu IMC é:" + ModificarIMC;
+                if (ModificarIMC < 18.5)
+                {
+                    resultado += "-Abaixo do peso";
+                }
+                else if (ModificarIMC < 24.9)
+                {
+                    resultado += "Peso Normal";
+                }
+                else if (ModificarIMC < 29.9)
+                {
+                    resultado += "Sobrepeso";
+                }
+                else if (ModificarIMC < 34.9)
+                {
+                    resultado += "Obesidade Grau 1";
+                }
+                else if (ModificarIMC < 39.9)
+                {
+                    resultado += "Obesidade Grau 2";
+                }
+                else
+                {
+                    resultado += "Obesidade Grau 3";
+                }//Fim do resultado If
+            }//Fim do If
+            else
+            {
+                resultado = "Impossivel Calcular IMC com Peso e/ou ALTURA NEGATIVO";
+            }
+            return resultado;
+        } //Fim do IMC
+
         //17. Calcule o salário anual com base no valor mensal.
         public double ValorAnual(double mensal)
         { 
@@ -198,63 +247,104 @@ namespace Exercicios
             return Math.Cos(num);
         }
 
+        //21. Calcule a área de um trapézio com base na base maior, base menor e altura.
 
-
-
-
-        //16.Leia a altura e peso de uma pessoa e calcule o IMC
-        //se IMC < 18.5 Abaixo do peso
-        //Se IMC >=18.5 e IMC < 24.9 - Peso Normal
-        //Se Imc >= 24.9 e IMC< 29.9 - sobrepeso
-        //Se IMC >=29.9 e IMC < 34.4 - Obesidade Grau 1
-        //Se IMC >=34.4 e IMC < 39.9 - Obesidade Grau 2 
-        //Se IMC >= 39.9               Obesidade Grau 3
-        //devolva o grau
-        public string CalcularIMC(double peso, double altura)
+        public double AreaTrapezio(double baseMaior,double baseMenor, double altura)
         {
-            string resultado = "";
-            if (peso > 0 && altura >= 0)
-            {
-                //Calculei
-                ModificarIMC = peso / Math.Pow(altura, 2);
-                //Verificando resposta
-                resultado = "\nSeu IMC é:" + ModificarIMC;
-                if (ModificarIMC < 18.5)
-                {
-                    resultado += "-Abaixo do peso";
-                }
-                else if (ModificarIMC <24.9)
-                {
-                    resultado += "Peso Normal";
-                }
-                else if(ModificarIMC<29.9)
-                {
-                    resultado += "Sobrepeso";
-                }
-                else if (ModificarIMC < 34.9)
-                {
-                    resultado += "Obesidade Grau 1";
-                }
-                else if (ModificarIMC < 39.9)
-                {
-                    resultado += "Obesidade Grau 2";
-                }
-                else
-                {
-                    resultado += "Obesidade Grau 3";
-                }//Fim do resultado If
-            }//Fim do If
-            else
-            {
-                resultado = "Impossivel Calcular IMC com Peso e/ou ALTURA NEGATIVO"; 
-            }
-            return resultado;
-        } //Fim do IMC
+            return (baseMaior + baseMenor)* altura/2;
+        }
 
-       
+        //22. Converta um valor de dias para segundos.
+        public double DiasParaSegundos(double dias)
+        {
+            return dias * 24 * 60 * 60;
+        }
         
+        //23. Leia um número e exiba a soma de seus dígitos.
+        public int SomaDigitos(int num) 
+        {
+            int somar = 0;
+            //validação
+            if(num < 0)
+            {
+                num = num *-1;
+            }
+            string nume = "" + num;
+            for(int i =0; i < nume.Length; i++)
+            {
+                somar += Convert.ToInt32(nume.Substring(i,1));
+            }//Fim for
+            return somar;
+        }//fim do metodo
 
+        //24. Leia um número e exiba seu inverso multiplicativo.
+        public int InversoMult(int num)
+        {
+            return num * 1 / num;
+        }
 
+        //25. Calcule a hipotenusa de um triângulo retângulo com base nos catetos.
+        public double Hipotenusa(double cateno1, double cateno2)
+        {
+            return Math.Sqrt((cateno1 * cateno1) + (cateno2 * cateno2));
+        }
+
+        //26. Leia um valor e exiba seu correspondente em binário.
+        public string Binario(int decim)
+        {
+            return Convert.ToString(decim, 2);
+        }
+        
+        //27. Leia um número e exiba seu correspondente em hexadecimal.
+        public string Hexadecimal(int decim)
+        {
+            string hexa = "";
+            string result = "";
+            while (decim !=0) 
+            {
+                result = "" + decim % 16;
+                switch (result)
+                {
+                    case "10":
+                        result= "A";
+                        break;
+                    case "11":
+                        result= "B"; 
+                        break;
+                    case "12":
+                        result= "C";
+                        break;
+                    case "13":
+                        result= "D";
+                        break;
+                    case "14":
+                        result= "E";
+                        break;
+                    case "15":
+                        result= "F";
+                        break;
+                }//Fim Switch
+                decim /= 16;
+                hexa += result;
+            }//Fim While
+            return Inverter(hexa);            
+        }//Fim Metodo
+        public string Inverter(string valor)
+        {
+            int tamanho = valor.Length;
+            string Invertido = "";
+            for(int i= tamanho-1;i >= 0;i--)
+            {
+                Invertido += valor.Substring(i,1);
+            }//Fim Do For
+            return Invertido;
+        }//Fim Do Metodo
+        
+        //28. Leia um valor e calcule sua raiz cúbica
+        public double RaizCubica(double decim) 
+        {
+            return Math.Sqrt(Math.Sqrt(decim));
+        }
 
     }//Fim da Classe
 }//Fim do Projeto
