@@ -54,8 +54,13 @@ namespace Exercicios
                 "\n26. Exercicio 26"+
                 "\n27. Exercicio 27"+
                 "\n28. Exercicio 28"+
-                "\n29. Exercicio 29"+
-                "\n30. Exercicio 30");
+                "\n29. Exercicio 29 Vetor"+
+                "\n30. Exercicio 30 Vetor"+
+                "\n31. Exercicio 31 vetor"+
+                "\n32. Exercicio 32 Vetor"+
+                "\n33. Exercicio 33 Vetor"+
+                "\n34. Exercicio 34 Vetor"+
+                "\n35. Exercicio 35 Vetor");
             ModificarOpcao=Convert.ToInt32(Console.ReadLine());
         }//Fim do Metodo MostraMenu
         public void ExecutarMenu()
@@ -352,6 +357,48 @@ namespace Exercicios
 
                         Console.WriteLine($"A Raiz Cubica é: {modelo.RaizCubica(valor)}");
                         break;
+
+                    case 29:
+                        Console.WriteLine("Exercicio 29");
+                        //Mostrar
+                        modelo.Preeenchervetor();
+                        break; 
+                    case 30:
+                        Console.WriteLine("Exercicio 30");
+                        modelo.Consultarvetor();
+                        break ; 
+                    case 31:
+                        Console.WriteLine("Exercicio 31");
+                        
+                        Console.WriteLine("Informe a idade que deseja buscar");
+                        int idade = Convert.ToInt32(Console.ReadLine());
+                        modelo.BuscarIdade(idade);
+                        break;
+                    
+                    case 32:
+                        Console.WriteLine("Exercicio 32");                                               
+                        modelo.OrdemInversa();
+                        modelo.consultar();
+                        break;
+
+                    case 33:
+                        Console.WriteLine("Exercicio 33");
+                        modelo.Preencher();
+                        modelo.Pares();
+                        break;
+
+                    case 34:
+                        Console.WriteLine("Exercicio 34");
+                        modelo.Preencher();
+                        modelo.Media();
+                        break;
+                    
+                    case 35:
+                        Console.WriteLine("Exercicio 35");
+                        modelo.PreencherVetorTexto();
+                        modelo.MostrarNomes();
+                        break;
+
 
                 }//Fim da Escolha
             }while(ModificarOpcao!=0);

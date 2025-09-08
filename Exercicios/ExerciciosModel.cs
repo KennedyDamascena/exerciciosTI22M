@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,12 +12,22 @@ namespace Exercicios
         //area de Variaveis
         private double area;
         private double IMC;
+        public int[] idade;//Estrutura de dados Finita
+        public int[] num;
+        public int soma;
+        public string[] nome;
+        
         //metodo construtor
 
         public ExerciciosModel()
         {
             this.area = 0;
             this.IMC = 0;
+            this.idade = new int[10];//de 0 até 9
+            this.num = new int[10];
+            this.soma = 0;
+            this.nome = new string[10];
+            
         }//Fim do Construtor
 
         //Metodo Get e Set
@@ -345,6 +356,125 @@ namespace Exercicios
         {
             return Math.Sqrt(Math.Sqrt(decim));
         }
+        
+        public void Preeenchervetor()
+        {
+            for(int i=0;i< 10;i++) 
+            {
+                do
+                {
+                    Console.Write(i + 1 + "ªidade:");
+                    idade[i] = Convert.ToInt32(Console.ReadLine());
+                    if(idade[i]<=0)
+                    {
+                        Console.WriteLine("ERRO INFORME UMA IDADE POSITIVA");
+                    }
+                } while (idade[i]<=0);
+            }//Fim do For
+        }//Fim do metodo
+
+        //metodo de consulta
+        public void Consultarvetor()
+        {
+            for(int i = 0; i<10;i++)
+            {
+                Console.WriteLine($"{i + 1}ªidade:{idade[i]}");
+            }//Fim For
+        }//Fim Consultar
+
+        public void BuscarIdade(int idade)
+        {
+            Boolean flag = false;
+            for(int i = 0;i<10; i++)
+            {
+                if (this.idade[i]==idade) 
+                { 
+                    flag = true;
+                    Console.WriteLine($"A idade {idade} está na Posição:{i+1}");
+                } 
+
+            }
+            if(flag==false)
+            {
+                Console.WriteLine($"A idade {idade}, Não está no Vetor");
+            }//Fim da Mensagem Alternativa
+        }//Fim do metodo buscar
+
+        //2. Leia 10 números e exiba-os na ordem inversa
+        public void OrdemInversa()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write(i + 1 + "ªNumero:");
+                num[i] = Convert.ToInt32(Console.ReadLine());    
+            }//Fim do For
+
+        }//Fim do metodo
+        public void consultar()
+        {
+            for (int i = 9; i >= 0; i--)
+            {
+                Console.WriteLine($"{i + 1}ªNumero:{num[i]}");
+            }//Fim For
+        }//Fim do metodo
+
+        //3. Leia 10 números e exiba apenas os pares.
+        public void Preencher()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write(i + 1 + "ªNumero:");
+                num[i] = Convert.ToInt32(Console.ReadLine());
+            }//Fim do For
+        }
+        public void Pares()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                if (this.num[i] % 2 == 0)
+                {
+                    Console.WriteLine($"{i + 1}ªNumero:{num[i]}");
+                }
+
+            }//Fim For
+        }
+        //4. Leia 10 números e exiba a média.
+        public void Media()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+               soma  += num[i];
+            }//Fim For
+            Console.WriteLine($"A media é:{soma / 10}");
+
+        }
+
+        //5. Leia 10 nomes e exiba os que começam com “A”.
+        public void PreencherVetorTexto()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write(i + 1 + "ªNome:");
+                nome[i] = Console.ReadLine();
+            }//Fim do For
+        }//fim do método
+
+        public void MostrarNomes()
+        {
+            for(int i = 0; i < 10; i++)
+            {
+                if (nome[i].Substring(0,1) == "a" || nome[i].Substring(0, 1) == "A")
+                {
+                    Console.WriteLine($"Os nome é: {nome[i]}");
+                }
+            }//fim do for
+        }//fim do método
+        
+        
+        
+        
+       
+
 
     }//Fim da Classe
 }//Fim do Projeto
