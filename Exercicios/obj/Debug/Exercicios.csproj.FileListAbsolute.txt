@@ -6,3 +6,11 @@ C:\Users\kennedy.dmiranda\source\repos\Exercicios\Exercicios\obj\Debug\Exercicio
 C:\Users\kennedy.dmiranda\source\repos\Exercicios\Exercicios\obj\Debug\Exercicios.csproj.CoreCompileInputs.cache
 C:\Users\kennedy.dmiranda\source\repos\Exercicios\Exercicios\obj\Debug\Exercicios.exe
 C:\Users\kennedy.dmiranda\source\repos\Exercicios\Exercicios\obj\Debug\Exercicios.pdb
+C:\Users\kennedy.dmiranda\source\repos\exerciciosTI22M\Exercicios\bin\Debug\Exercicios.exe.config
+C:\Users\kennedy.dmiranda\source\repos\exerciciosTI22M\Exercicios\bin\Debug\Exercicios.exe
+C:\Users\kennedy.dmiranda\source\repos\exerciciosTI22M\Exercicios\bin\Debug\Exercicios.pdb
+C:\Users\kennedy.dmiranda\source\repos\exerciciosTI22M\Exercicios\obj\Debug\Exercicios.csproj.AssemblyReference.cache
+C:\Users\kennedy.dmiranda\source\repos\exerciciosTI22M\Exercicios\obj\Debug\Exercicios.exe.config
+C:\Users\kennedy.dmiranda\source\repos\exerciciosTI22M\Exercicios\obj\Debug\Exercicios.csproj.CoreCompileInputs.cache
+C:\Users\kennedy.dmiranda\source\repos\exerciciosTI22M\Exercicios\obj\Debug\Exercicios.exe
+C:\Users\kennedy.dmiranda\source\repos\exerciciosTI22M\Exercicios\obj\Debug\Exercicios.pdb

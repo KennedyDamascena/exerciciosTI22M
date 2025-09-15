@@ -14,9 +14,15 @@ namespace Exercicios
         private double IMC;
         public int[] idade;//Estrutura de dados Finita
         public int[] num;
+        public double[] num1;
+        public double[] vet1;
+        public double[] vet2;
+        public double[] vet3;
+        public int[] pares;
+        public int[] impar;
         public int soma;
         public string[] nome;
-        
+
         //metodo construtor
 
         public ExerciciosModel()
@@ -25,9 +31,16 @@ namespace Exercicios
             this.IMC = 0;
             this.idade = new int[10];//de 0 até 9
             this.num = new int[10];
+            this.num1 = new double[10];
+            this.vet1 = new double[10];
+            this.vet2 = new double[10];
+            this.vet3 = new double[10];
             this.soma = 0;
             this.nome = new string[10];
-            
+            this.impar = new int[10];
+            this.pares = new int[10];
+
+
         }//Fim do Construtor
 
         //Metodo Get e Set
@@ -165,8 +178,8 @@ namespace Exercicios
         }//Fim
 
         //14.Calcule o consumo médio de combustível com base em km e litros.
-        public double ConsumoMedio(double km,double litros)
-        { 
+        public double ConsumoMedio(double km, double litros)
+        {
             return km / litros;
         }//Fim
 
@@ -236,33 +249,33 @@ namespace Exercicios
 
         //17. Calcule o salário anual com base no valor mensal.
         public double ValorAnual(double mensal)
-        { 
+        {
             return mensal * 12;
         }
 
         //18. Leia um número e exiba seu logaritmo natural.
-        public double Logaritmo(double num) 
+        public double Logaritmo(double num)
         {
             return Math.Log(num);
         }
 
         //19. Leia um número e exiba seu seno.
         public double Seno(double num)
-        { 
+        {
             return Math.Sin(num);
         }
 
         //20. Leia um número e exiba seu cosseno.
-        public double Cosseno(double num) 
+        public double Cosseno(double num)
         {
             return Math.Cos(num);
         }
 
         //21. Calcule a área de um trapézio com base na base maior, base menor e altura.
 
-        public double AreaTrapezio(double baseMaior,double baseMenor, double altura)
+        public double AreaTrapezio(double baseMaior, double baseMenor, double altura)
         {
-            return (baseMaior + baseMenor)* altura/2;
+            return (baseMaior + baseMenor) * altura / 2;
         }
 
         //22. Converta um valor de dias para segundos.
@@ -270,20 +283,20 @@ namespace Exercicios
         {
             return dias * 24 * 60 * 60;
         }
-        
+
         //23. Leia um número e exiba a soma de seus dígitos.
-        public int SomaDigitos(int num) 
+        public int SomaDigitos(int num)
         {
             int somar = 0;
             //validação
-            if(num < 0)
+            if (num < 0)
             {
-                num = num *-1;
+                num = num * -1;
             }
             string nume = "" + num;
-            for(int i =0; i < nume.Length; i++)
+            for (int i = 0; i < nume.Length; i++)
             {
-                somar += Convert.ToInt32(nume.Substring(i,1));
+                somar += Convert.ToInt32(nume.Substring(i, 1));
             }//Fim for
             return somar;
         }//fim do metodo
@@ -305,78 +318,78 @@ namespace Exercicios
         {
             return Convert.ToString(decim, 2);
         }
-        
+
         //27. Leia um número e exiba seu correspondente em hexadecimal.
         public string Hexadecimal(int decim)
         {
             string hexa = "";
             string result = "";
-            while (decim !=0) 
+            while (decim != 0)
             {
                 result = "" + decim % 16;
                 switch (result)
                 {
                     case "10":
-                        result= "A";
+                        result = "A";
                         break;
                     case "11":
-                        result= "B"; 
+                        result = "B";
                         break;
                     case "12":
-                        result= "C";
+                        result = "C";
                         break;
                     case "13":
-                        result= "D";
+                        result = "D";
                         break;
                     case "14":
-                        result= "E";
+                        result = "E";
                         break;
                     case "15":
-                        result= "F";
+                        result = "F";
                         break;
                 }//Fim Switch
                 decim /= 16;
                 hexa += result;
             }//Fim While
-            return Inverter(hexa);            
+            return Inverter(hexa);
         }//Fim Metodo
         public string Inverter(string valor)
         {
             int tamanho = valor.Length;
             string Invertido = "";
-            for(int i= tamanho-1;i >= 0;i--)
+            for (int i = tamanho - 1; i >= 0; i--)
             {
-                Invertido += valor.Substring(i,1);
+                Invertido += valor.Substring(i, 1);
             }//Fim Do For
             return Invertido;
         }//Fim Do Metodo
-        
+
         //28. Leia um valor e calcule sua raiz cúbica
-        public double RaizCubica(double decim) 
+        public double RaizCubica(double decim)
         {
             return Math.Sqrt(Math.Sqrt(decim));
         }
-        
+
         public void Preeenchervetor()
         {
-            for(int i=0;i< 10;i++) 
+            for (int i = 0; i < 10; i++)
             {
                 do
                 {
                     Console.Write(i + 1 + "ªidade:");
                     idade[i] = Convert.ToInt32(Console.ReadLine());
-                    if(idade[i]<=0)
+                    if (idade[i] <= 0)
                     {
                         Console.WriteLine("ERRO INFORME UMA IDADE POSITIVA");
                     }
-                } while (idade[i]<=0);
+                } while (idade[i] <= 0);
             }//Fim do For
         }//Fim do metodo
 
         //metodo de consulta
         public void Consultarvetor()
         {
-            for(int i = 0; i<10;i++)
+            for (int i = 0; i < 10; i++)
             {
                 Console.WriteLine($"{i + 1}ªidade:{idade[i]}");
             }//Fim For
@@ -385,16 +398,16 @@ namespace Exercicios
         public void BuscarIdade(int idade)
         {
             Boolean flag = false;
-            for(int i = 0;i<10; i++)
+            for (int i = 0; i < 10; i++)
             {
-                if (this.idade[i]==idade) 
-                { 
+                if (this.idade[i] == idade)
+                {
                     flag = true;
-                    Console.WriteLine($"A idade {idade} está na Posição:{i+1}");
-                } 
+                    Console.WriteLine($"A idade {idade} está na Posição:{i + 1}");
+                }
 
             }
-            if(flag==false)
+            if (flag == false)
             {
                 Console.WriteLine($"A idade {idade}, Não está no Vetor");
             }//Fim da Mensagem Alternativa
@@ -406,7 +419,7 @@ namespace Exercicios
             for (int i = 0; i < 10; i++)
             {
                 Console.Write(i + 1 + "ªNumero:");
-                num[i] = Convert.ToInt32(Console.ReadLine());    
+                num[i] = Convert.ToInt32(Console.ReadLine());
             }//Fim do For
 
         }//Fim do metodo
@@ -443,7 +456,7 @@ namespace Exercicios
         {
             for (int i = 0; i < 10; i++)
             {
-               soma  += num[i];
+                soma += num[i];
             }//Fim For
             Console.WriteLine($"A media é:{soma / 10}");
 
@@ -461,19 +474,262 @@ namespace Exercicios
 
         public void MostrarNomes()
         {
-            for(int i = 0; i < 10; i++)
+            for (int i = 0; i < 10; i++)
             {
-                if (nome[i].Substring(0,1) == "a" || nome[i].Substring(0, 1) == "A")
+                if (nome[i].Substring(0, 1) == "a" || nome[i].Substring(0, 1) == "A")
                 {
-                    Console.WriteLine($"Os nome é: {nome[i]}");
+                    Console.WriteLine($"O nome que inicia com a letra A é: {nome[i]}");
                 }
-            }//fim do for
+            }//fim do for/
         }//fim do método
+
+        //6. Leia 10 números e conte quantos são maiores que a média.
+
+        public void MaiorMedia()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                soma += num[i];
+            }//Fim For
+            double media = soma / 10;
+            int contarMaior = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                if (num[i] > media)
+                {
+                    contarMaior++;
+                }
+            }
+            Console.WriteLine($"O total de numeros maior que a Média é : {contarMaior}");
+        }//fim do método
+
+        //7. Leia 10 idades e exiba a maior.
+        public void IdadeMaior()
+        {
+            int maior = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                if (idade[i] > maior)
+                {
+                    maior = idade[i];
+                }
+            }
+            Console.WriteLine($"A idade maior é : {maior}");
+        }
+
+        //8. Leia 10 alturas e exiba a média.
+        public void PreeencherDou()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                do
+                {
+                    Console.Write(i + 1 + "ªnumero:");
+                    num1[i] = Convert.ToDouble(Console.ReadLine());
+                
+                    if (num1[i] < 0)
+                    {
+                        Console.WriteLine("Erro, informe um número positivo!");
+                    }
+                } while (num1[i] < 0);
+            }//Fim do For
+        }//Fim do metodo
+
+
+        public void MediaAltura()
+        {
+            double som = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                som += num1[i];
+            }//Fim For
+            Console.WriteLine($"A media  de Altura é:{som / 10}");
+        }//Fim Metodo
+
+        //9. Leia 10 salários e exiba quantos ganham abaixo de R$ 1.200. 
+        public void GanhaAbaixo()
+        {
+            double maior = 1200;
+            int contar = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                if (num1[i] <= maior)
+                {
+                    contar++;  
+                }
+            }
+            Console.WriteLine($" Os salarios que estão abaixo são: {contar}");
+        }
+
+        //10. Leia 10 números e exiba quantos são múltiplos de 5. 
         
+        public void Mult5()
+        {
+            for(int i = 0;i < 10;i++)
+            {
+                if (this.num[i] % 5 == 0)
+
+                {
+                    Console.WriteLine($"{i + 1}ªNumero:{num[i]}");
+                }
+
+            }//Fim for        
+        }//Fim Metodo
+
+        //11. Leia 10 valores e os armazene em dois vetores(pares e ímpares). 
+
+        public void VetPareImp()
+        {
+            int contarPar = 0;
+            int contarImpar = 0;
+            for( int i = 0;i < 10 ; i++)
+            {
+                if(num[i] % 2== 0)
+                {
+                    pares[contarPar] = num[i];
+                    contarPar++;
+                }
+                else
+                {
+                    impar[contarImpar]=num[i];
+                    contarImpar++;
+                }
+
+            }
+
+            for(int i=0; i< 10; i++)
+            {
+                Console.WriteLine($"O vetor par é: {pares[i]}");
+            }
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine($"O vetor Impar é: {impar[i]}");
+            }
+        }//Fim do Metodo
+
+        //12. Leia 10 valores e ordene do maior para o menor.
+
+        public void MaiorMenor()
+        {
+            int aux = 0;
+            for (int i = 1; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    if (num[i] > num[j])
+                    {
+                        aux = num[j];
+                        num[j] = num[i];
+                        num[i] = aux;                        
+                    }//Fim If                    
+                }//Fim For
+            }//Fim do for
+        }//Fim do Metodo
+
+        public void Consulta()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine($"{i + 1}ªNumero {num[i]}");
+            }//Fim For
+        }//Fim Consultar
+
+        //13. Leia 10 números e exiba os repetidos.
+
+        public void Repetido()
+        {
+            for (int i = 0;i < 5; i++)
+            {
+                for (int j = 5; j < 10; j++)
+                {
+                    if (num[i] == num[j])
+                    {
+                        Console.WriteLine($"O Numero Repetidos é: {i + 1} ªNumero {num[i]}");
+                    }
+                }//fim for
+            }//fim for
+        }//Fim Metodo
+
+        //14. Some dois vetores de 10 posições.
         
-        
-        
-       
+        public void Preeenchervet1()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+               Console.Write(i + 1 + " ªNumero:");
+               vet1[i] = Convert.ToDouble(Console.ReadLine());
+                   
+            }//Fim do For
+        }//Fim do metodo
+
+        public void Preeenchervet2()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write(i + 1 + " ªNumero:");
+                vet2[i] = Convert.ToDouble(Console.ReadLine());
+
+            }//Fim do For
+        }//Fim do metodo
+
+
+        public void SomaVetores()
+        {
+            double soma = 0;
+            for (int i = 0; i < 10; i++)
+            {
+             
+                soma += vet1[i] + vet2[i] ;
+            }//fim for
+            Console.WriteLine($"A soma é: {soma}");
+        }//Fim Metodo
+
+        //15. Multiplique dois vetores de 10 posições e armazene em outro.
+
+        public void MultVetor()
+        {
+            double soma = 0;
+            for(int i = 0;i < 10;i++)
+            {
+                vet3[i] = vet1[i] * vet2[i];
+            }
+        }
+
+        public void Consultavet3()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine($"{i + 1} ªSua Multiplicação é: {vet3[i]}");
+            }//Fim For
+        }//Fim Consultar
+
+        //16. Calcule a soma de todos os elementos de um vetor.
+
+        public void SomaElemento()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                soma += num[i];
+            }
+            Console.WriteLine($"A Soma de todos elementos é: {soma}");
+        }//Fim Metodo
+
+        //17. Encontre o maior número em um vetor e sua posição.
+
+        public void EncontreMaior()
+        {
+            int maior = 0;
+            int posicao =0;
+            for (int i = 0;i < 10;i++)
+            {
+                if (num[i]>maior)
+                {
+                    maior=num[i];
+                    posicao = i+1;                                                                
+                }//Fim if
+            }
+            Console.WriteLine($"{posicao} ª o numero é: { maior}");
+        }
 
 
     }//Fim da Classe

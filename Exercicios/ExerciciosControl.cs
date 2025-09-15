@@ -60,7 +60,19 @@ namespace Exercicios
                 "\n32. Exercicio 32 Vetor"+
                 "\n33. Exercicio 33 Vetor"+
                 "\n34. Exercicio 34 Vetor"+
-                "\n35. Exercicio 35 Vetor");
+                "\n35. Exercicio 35 Vetor"+
+                "\n36. Exercicio 36 Vetor"+
+                "\n37. Exercicio 37 Vetor"+
+                "\n38. Exercicio 38 Vetor"+
+                "\n39. Exercicio 39 Vetor"+
+                "\n40. Exercicio 40 Vetor"+
+                "\n41. Exercicio 41 Vetor"+
+                "\n42. Exercicio 42 Vetor"+
+                "\n43. Exercicio 43 Vetor"+
+                "\n44. Exercicio 44 Vetor"+
+                "\n45. Exercicio 45 Vetor"+
+                "\n46. Exercicio 46 Vetor"+
+                "\n47. Exercicio 47 Vetor");
             ModificarOpcao=Convert.ToInt32(Console.ReadLine());
         }//Fim do Metodo MostraMenu
         public void ExecutarMenu()
@@ -252,9 +264,7 @@ namespace Exercicios
                         Console.WriteLine(modelo.CalcularIMC(peso, altura));
                         break;
 
-                    default:
-                        Console.WriteLine("Opção escolhida não é valida!!");
-                        break;
+                 
 
                     case 17:
                         Console.WriteLine("Exercicio 17");
@@ -397,6 +407,87 @@ namespace Exercicios
                         Console.WriteLine("Exercicio 35");
                         modelo.PreencherVetorTexto();
                         modelo.MostrarNomes();
+                        break;
+                    case 36:
+                        Console.WriteLine("Exercicio 36");
+                        modelo.Preencher();
+                        modelo.MaiorMedia();
+                        break ;
+
+                    case 37:
+                        Console.WriteLine("Exercicio 37");
+                        modelo.Preeenchervetor();
+                        modelo.IdadeMaior();
+                        break;
+                    case 38:
+                        Console.WriteLine("Exercicio 38");
+                        modelo.PreeencherDou();
+                        modelo.MediaAltura();
+                        break;
+
+                    case 39:
+                        Console.WriteLine("Exercicio 39");
+                        modelo.PreeencherDou();
+                        modelo.GanhaAbaixo();
+                        break;
+                    
+
+                    case 40:
+                        Console.WriteLine("Exercicio 40");
+                        modelo.Preencher();
+                        modelo.Mult5();
+                        break;
+                    
+                    case 41:
+                        Console.WriteLine("Exercicio 41");
+                        modelo.Preencher();
+                        modelo.VetPareImp();       
+                        break;
+
+                    case 42:
+                        Console.WriteLine("Exercicio 42");
+                        modelo.Preencher();
+                        modelo.MaiorMenor();
+                        modelo.Consulta();
+                        break;
+                     
+                    case 43:
+                        Console.WriteLine("Exercicio 43");
+                        modelo.Preencher();
+                        modelo.Repetido();
+                        break;
+
+                    case 44:
+                        Console.WriteLine("Exercicio 44");
+                        modelo.Preeenchervet1();
+                        modelo.Preeenchervet2();
+                        modelo.SomaVetores();
+                        break;
+
+                    case 45:
+                        Console.WriteLine("Exercicio 45");
+                        modelo.Preeenchervet1();
+                        modelo.Preeenchervet2();
+                        modelo.MultVetor();
+                        modelo.Consultavet3();
+                        break;
+
+                    case 46:
+                        Console.WriteLine("Exercicio 46");
+                        modelo.Preencher();
+                        modelo.SomaElemento();
+                        break;
+
+                    case 47:
+                        Console.WriteLine("Exercicio 47");
+                        modelo.Preencher();
+                        modelo.EncontreMaior();
+                        break;
+
+
+
+                    default:
+                        Console.WriteLine("Opção escolhida não é valida!!");
                         break;
 
 
