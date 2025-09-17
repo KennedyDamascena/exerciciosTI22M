@@ -72,7 +72,16 @@ namespace Exercicios
                 "\n44. Exercicio 44 Vetor"+
                 "\n45. Exercicio 45 Vetor"+
                 "\n46. Exercicio 46 Vetor"+
-                "\n47. Exercicio 47 Vetor");
+                "\n47. Exercicio 47 Vetor"+
+                "\n48. Exercicio 48 Matriz"+
+                "\n49. Exercicio 49 Matriz"+
+                "\n50. Exercicio 50 Matriz"+
+                "\n51. Exercicio 51 Matriz"+
+                "\n52. Exercicio 52 Matriz"+
+                "\n53. Exercicio 53 Matriz"+
+                "\n54. Exercicio 54 Matriz"+
+                "\n55. Exercicio 55 Matriz"+
+                "\n56. Exercicio 56 Matriz");
             ModificarOpcao=Convert.ToInt32(Console.ReadLine());
         }//Fim do Metodo MostraMenu
         public void ExecutarMenu()
@@ -484,7 +493,57 @@ namespace Exercicios
                         modelo.EncontreMaior();
                         break;
 
+                        // EXERCICIOS DE MATRIZ
+                    case 48:
+                        Console.WriteLine("Exercicio 48");
+                        modelo.PreencherMat3x3();
+                        modelo.MostrarMatriz3x3();
+                        break;
 
+                    case 49:
+                        Console.WriteLine("Exercicio 49");
+                        modelo.PreencherZero();
+                        modelo.MostrarMatriz3x3();
+                        break;
+
+                    case 50:
+                        Console.WriteLine("Exercicio 50");
+                        modelo.PreencherMat3x3();
+                        modelo.MatSoma();
+                        break;
+                    case 51:
+                        Console.WriteLine("Exercicio 51");
+                        modelo.PreencherMat4x4();
+                        modelo.Media4x4();
+                        break;
+
+                    case 52:
+                        Console.WriteLine("Exercicio 52");
+                        modelo.PreencherMat4x4();
+                        modelo.Maior10();
+                        break;
+                    case 53:
+                        Console.WriteLine("Exercicio 53");
+                        modelo.PreencherMat3x3();
+                        modelo.PreencherSegMat3x3();
+                        modelo.SomaMatriz3x3();
+                        break;
+                    case 54:
+                        Console.WriteLine("Exercicio 54");
+                        modelo.PreencheMatrix2x2();
+                        modelo.PreenchesegMatrix2x2();
+                        modelo.MultMatriz2x2();
+                        modelo.MostrarMatriz2x2();
+                        break;
+                    case 55:
+                        Console.WriteLine("Exercicio 55");
+                        modelo.PreencheMatrix5x5();
+                        modelo.TrocarMatrix5x5();
+                        modelo.MostrarMatriz5x5();
+                        break;
+                    case 56:
+                        Console.WriteLine("Exercicio 56");
+                        break;
 
                     default:
                         Console.WriteLine("Opção escolhida não é valida!!");

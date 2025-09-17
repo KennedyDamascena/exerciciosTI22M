@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -22,6 +24,13 @@ namespace Exercicios
         public int[] impar;
         public int soma;
         public string[] nome;
+        public int[,] matriz2x2;
+        public int[,] segmatriz2x2;
+        public int[,] termatrix2x2;
+        public int[,] matriz3x3;
+        public int[,] Segmatriz3x3;
+        public int[,] matriz4x4;
+        public int[,] matrix5x5;
 
         //metodo construtor
 
@@ -39,6 +48,13 @@ namespace Exercicios
             this.nome = new string[10];
             this.impar = new int[10];
             this.pares = new int[10];
+            this.matriz2x2 = new int[2,2];
+            this.segmatriz2x2 = new int[2,2];
+            this.termatrix2x2 = new int[2,2];
+            this.matriz3x3 = new int[3,3];
+            this.Segmatriz3x3= new int[3,3];
+            this.matriz4x4 = new int[4,4];
+            this.matrix5x5 = new int[5,5];
 
 
         }//Fim do Construtor
@@ -731,6 +747,257 @@ namespace Exercicios
             Console.WriteLine($"{posicao} ª o numero é: { maior}");
         }
 
+        // Exercicio Matriz 
 
+        public void PreencherMat3x3()
+        {
+            for(int linha = 0;linha <= 2;linha++)
+            {
+                for( int coluna = 0;coluna<=2;coluna++)
+                {
+                    Console.WriteLine($"matriz {linha}{coluna}:");
+                    this.matriz3x3[linha,coluna]=Convert.ToInt32(Console.ReadLine());
+                }//fim do for Coluna
+            }//Fim do For Linha
+        }//Fim metodo
+
+        public void MostrarMatriz3x3()
+        {
+            for(int linha =0;linha<=2;linha++)
+            {
+                for(int coluna = 0; coluna<=2;coluna++)
+                {
+                    Console.Write($"{matriz3x3[linha,coluna]} ");
+                }//for Coluna
+                Console.WriteLine("");//Pular linha
+            }//For linha
+        }//Fim do metodo
+
+        public void PreencherZero()//Diagonal Principal\
+        {
+            for(int linha =0;linha<=2; linha++)
+            {
+                for (int coluna = 0;coluna<=2;coluna++)
+                {
+                    if(linha == coluna)
+                    {
+                        matriz3x3[linha, coluna] = 0;
+                    }
+                    else
+                    {
+                        matriz3x3[linha, coluna] = 1;
+                    }
+                }//for coluna
+            }//for Linha
+        }//Fim do Metodo
+
+        public void PreencherZero2()//Diagonal Segundaria/
+        {
+            for (int linha = 0; linha <= 2; linha++)
+            {
+                for (int coluna = 0; coluna <= 2; coluna++)
+                {
+                    if (linha + coluna == 2)
+                    {
+                        matriz3x3[linha, coluna] = 0;
+                    }
+                    else
+                    {
+                        matriz3x3[linha, coluna] = 1;
+                    }
+                }//for coluna
+            }//for Linha
+        }//Fim do Metodo
+
+        //2. Some todos os elementos de uma matriz 3x3.
+        public void MatSoma()//Soma de elementos 3x3
+        {
+            for( int linha = 0;linha <= 2; linha++)
+            {
+                for( int coluna = 0;coluna <= 2; coluna++)
+                {
+                    soma += matriz3x3[linha,coluna];
+                }//Fim for coluna
+            }//fim for linha
+            Console.WriteLine($"A Soma de todos elementos é: {soma}");
+        }//Fim metodo
+
+        //3. Calcule a média dos elementos de uma matriz 4x4.
+
+        public void PreencherMat4x4()
+        {
+            for (int linha = 0; linha <= 3; linha++)
+            {
+                for (int coluna = 0; coluna <= 3; coluna++)
+                {
+                    Console.WriteLine($"matriz {linha}{coluna}:");
+                    this.matriz4x4[linha, coluna] = Convert.ToInt32(Console.ReadLine());
+                }//fim do for Coluna
+            }//Fim do For Linha
+        }//Fim metodo
+
+        public void Media4x4()//media de elementos 4x4
+        {
+            for (int linha = 0; linha <= 3; linha++)
+            {
+                for (int coluna = 0; coluna <= 3; coluna++)
+                {
+                    soma += matriz4x4[linha, coluna]; 
+                }//Fim for coluna
+            }//fim for linha
+            Console.WriteLine($"A Media é: {soma/16}");
+        }//Fim metodo
+
+        //6. Leia uma matriz 4x4 e conte os elementos maiores que 10.
+        public void Maior10()
+        {
+            int maior = 10;
+            int contar = 0;
+            for(int linha = 0;linha <= 3; linha++)
+            {
+                for (int coluna = 0; coluna <= 3; coluna++)
+                {
+                    if (matriz4x4[linha, coluna] >= maior)
+                    {
+                        contar++;
+                    }
+                }//Fim da Coluna
+            }//Fim For Linha
+            Console.WriteLine($" O Numero de elementos maiores que 10 são: {contar}");
+        }//Fim do Metodo
+
+        //7. Leia duas matrizes 3x3 e some os valores.
+        public void PreencherSegMat3x3()
+        {
+            for (int linha = 0; linha <= 2; linha++)
+            {
+                for (int coluna = 0; coluna <= 2; coluna++)
+                {
+                    Console.WriteLine($"matriz {linha}{coluna}:");
+                    this.Segmatriz3x3[linha, coluna] = Convert.ToInt32(Console.ReadLine());
+                }//fim do for Coluna
+            }//Fim do For Linha
+        }//Fim metodo
+
+        public void SomaMatriz3x3()
+        {
+            double soma = 0;
+            for (int linha =0; linha <= 2;linha++)
+            {
+                for(int coluna = 0;coluna <= 2; coluna++)
+                {
+                    soma += matriz3x3[linha, coluna] + Segmatriz3x3[linha, coluna];
+                }
+               
+            }//fim for
+            Console.WriteLine($"A soma é: {soma}");
+        }//Fim Metodo
+
+        //8. Multiplique duas matrizes 2x2.
+
+        public void PreencheMatrix2x2()
+        {
+            for( int linha = 0;linha <= 1; linha++)
+            {
+                for (int coluna = 0; coluna <= 1; coluna++)
+                {
+                    Console.WriteLine($"matriz {linha}{coluna}:");
+                    this.matriz2x2[linha, coluna] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+        }
+
+        public void PreenchesegMatrix2x2()
+        {
+            for (int linha = 0; linha <= 1; linha++)
+            {
+                for (int coluna = 0; coluna <= 1; coluna++)
+                {
+                    Console.WriteLine($"matriz {linha}{coluna}:");
+                    this.segmatriz2x2[linha, coluna] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+        }
+
+        public void MultMatriz2x2()
+        {
+            double soma = 0;
+            for (int linha = 0; linha <= 1; linha++)
+            {
+                for (int coluna = 0; coluna <= 1; coluna++)
+                {
+                    termatrix2x2[linha, coluna] = matriz2x2[linha, coluna] * segmatriz2x2[linha, coluna];
+                }
+
+            }//fim for            
+        }//Fim Metodo
+
+        public void MostrarMatriz2x2()
+        {
+            for (int linha = 0; linha <= 1; linha++)
+            {
+                for (int coluna = 0; coluna <= 1; coluna++)
+                {
+                    Console.Write($"{termatrix2x2[linha, coluna]} ");
+                }//for Coluna
+                Console.WriteLine("");//Pular linha
+            }//For linha
+        }//Fim do metodo
+
+        //9. Leia uma matriz 5x5 e troque a primeira linha com a última.
+        public void PreencheMatrix5x5()
+        {
+            for (int linha = 0; linha <= 4; linha++)
+            {
+                for (int coluna = 0; coluna <= 4; coluna++)
+                {
+                    Console.WriteLine($"matriz {linha}{coluna}:");
+                    this.matrix5x5[linha, coluna] = Convert.ToInt32(Console.ReadLine());
+                }
+            }
+        }
+
+        public void TrocarMatrix5x5()
+        {
+            int aux = 0;
+            for (int i = 0; i <= 4; i++)
+            { 
+                aux = matrix5x5[i, 4];
+                matrix5x5[i, 4] = matrix5x5[0,i];
+                matrix5x5[0, i] = aux;                
+            }
+        }
+
+        public void MostrarMatriz5x5()
+        {
+            for (int linha = 0; linha <= 4; linha++)
+            {
+                for (int coluna = 0; coluna <= 4; coluna++)
+                {
+                    Console.Write($"{matrix5x5[linha, coluna]} ");
+                }//for Coluna
+                Console.WriteLine("");//Pular linha
+            }//For linha
+        }//Fim do metodo
+
+        //10. Leia uma matriz 3x3 e exiba a matriz transposta.
+
+        public void MatTransposta3x3()
+        {
+            for (int linha = 0; linha <= 2; linha++)
+            {
+                for (int coluna = 0; coluna <= 2; coluna++)
+                {
+                    if (linha == coluna)
+                    {
+                        matriz3x3[linha, coluna] = 0;
+                    }
+                    else
+                    {
+                        matriz3x3[linha, coluna] = 1;
+                    }
+                }//for coluna
+            }//for Linha
+        }//Fim do Metodo
     }//Fim da Classe
 }//Fim do Projeto
